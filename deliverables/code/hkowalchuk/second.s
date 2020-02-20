@@ -2,9 +2,9 @@
 
 .section .data
 
-a: .word 2 @ 32-bit variable a in memory
-b: .word 5 @ 32-bit variable b in memory
-c: .word 0 @ 32-bit variable c in memory
+a: .word 2      @ 32-bit variable a in memory
+b: .word 5      @ 32-bit variable b in memory
+c: .word 0      @ 32-bit variable c in memory
 
 .section .text
 .global _start
@@ -21,10 +21,4 @@ _start:
   mov r7, #1    @ Program Termination: exit syscall
   svc #0        @ Program Termination: wake kernel
 .end
-
-
-#(gdb) p &a
-#$1 = (<data variable, no debug info> *) 0x200a4
-#(gdb) x/3xw 0x200a4
-#0x200a4:	0x00000002	0x00000005	0x00000007
 
