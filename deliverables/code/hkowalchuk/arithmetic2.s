@@ -34,7 +34,7 @@ _start:
   ldr r3, [r3]
 
   @ r4 = 9im
-  ldr r4, #9
+  mov r4, #9
 
   @ r2 = val2 + 9
   add r2, r2, r4
