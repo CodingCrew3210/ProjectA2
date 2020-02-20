@@ -16,8 +16,15 @@ _start:
   ldr r2, [r2]  @ load the value b into r2
   add r1,r1,r2  @ addr to r2 and store into r1
   ldr r2, =c    @ load the memory address of c into r2
-  str r1, [12]  @ store r1 into memory c
-  
-  mov 17, #1    @ Program Termination: exit syscall
-  sve #0        @ Program Termination: wake kernel
+  str r1, [r2]  @ store r1 into memory c
+
+  mov r7, #1    @ Program Termination: exit syscall
+  svc #0        @ Program Termination: wake kernel
 .end
+
+
+#(gdb) p &a
+#$1 = (<data variable, no debug info> *) 0x200a4
+#(gdb) x/3xw 0x200a4
+#0x200a4:	0x00000002	0x00000005	0x00000007
+
