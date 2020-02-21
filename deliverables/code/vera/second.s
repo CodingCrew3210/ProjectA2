@@ -10,7 +10,7 @@ _start:
     ldr r1,[r1]		@load the value a into r1
     ldr r2,=b		@load the memory address of b into r2
     ldr r2,[r2]		@load the value b into r2
-    add r1,r1,r2		@add r1 to r2 and store into r1
+    add r1,r1,r2	@add r1 to r2 and store into r1
     ldr r2,=c		@load the memory address of c into r2
     str r1,[r2]		@store r1 into memory c
 
